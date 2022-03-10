@@ -67,7 +67,7 @@ const ExtendMenuContainer = style({
   top: 30,
   right: -70,
 });
-const PlusButton = themed(({ text, colors }) =>
+const PlusButton = themed(({ text }) =>
   style({
     marginLeft: 'auto',
     display: 'flex',

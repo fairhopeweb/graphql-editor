@@ -6,10 +6,10 @@ import {
   NodeChangeFieldTypeMenu,
   NodeTypeOptionsMenu,
 } from '@/Graf/Node/ContextMenu';
-import { ActiveInputValueName } from './ActiveInputValueName';
 import {
   DetailMenuItem,
   EditableDefaultValue,
+  EditableText,
   FieldPort,
   Menu,
   MenuScrollingArea,
@@ -120,12 +120,12 @@ export const ActiveInputValue: React.FC<FieldProps> = ({
         <div className={Name}>
           {isLocked && <span>{node.name}</span>}
           {!isLocked && (
-            <ActiveInputValueName
-              afterChange={(newName) => {
+            <EditableText
+              value={node.name}
+              onChange={(newName) => {
                 node.name = newName;
                 setTree({ ...tree });
               }}
-              node={node}
             />
           )}
         </div>
